@@ -1,0 +1,245 @@
+<html>
+	<head>
+		<script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.8.6.custom.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/jquery-ui-1.8.6.custom.css" />
+		<script>
+			function getDateAndTime() {
+				//store the current date in the date field
+				var currentTime = new Date();
+				var month = currentTime.getMonth() + 1;
+				var day = currentTime.getDate();
+				var year = currentTime.getFullYear();
+				document.getElementById('date').value = day + "/" + month + "/" + year;
+				
+				
+				//store the current time into the time field
+				var hours = currentTime.getHours()
+				var minutes = currentTime.getMinutes()
+				if (minutes < 10){
+					minutes = "0" + minutes;
+				}
+				document.getElementById('time').value = hours + ":" + minutes + " ";
+			}
+		</script>
+		<script>
+		/*$(function() {
+		    $('#date').datepicker({
+			dateFormat: 'dd/mm/yy'});
+		});*/
+		function validate() {
+			alert('oi!');
+
+			var x=document.getElementsByName('player-scores').value;
+			var regExp = /[1-9]{1}/i;
+			
+				if(x == '') {
+					alert('double no!');
+				}
+				else if (!x.match(regExp)) {
+				    //document.getElementById('player-scores').style.background='#ffeac8';
+				    alert('no!');
+				    //document.getElementById('CSCerror').innerHTML = "You must enter<br/> a CSC number";
+				    formok=false;
+				}
+				else {
+					alert('yep!');
+					formok=true;
+					//redirect here... 
+				}
+		}
+		</script>
+		</script>
+		<style>
+			body {font-family: Georgia, "Times New Roman", Times, serif;}
+			table {width:300px;border:1px solid #ccc;}
+			.score-text {border:none;width:75px;text-align:center;}
+			.hint-text {color:#666;}
+			#date {width:105px;text-align:center;}
+			#time {width:104px;text-align:center;}
+			#scores-table tr td, #second-scores-table tr td {border: 1px solid #ccc;}
+			.par {color: #f00;}
+		</style>
+	</head>
+	<body onLoad="getDateAndTime();">
+		<table>
+			<tr>
+				<td>Date </td><td><input type="text" value="" id="date" class="hint-text" /></td><td>Time </td><td><input type="text" class="hint-text" id="time" onFocus="if(value == '') {value = 'Time'}" onBlur="if(value == '') {value='Name'}" /></td>
+			</tr>
+		</table>
+		<table style="width:300px;">
+			<tr><td class="players">Player 1</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+			<tr><td class="players">Player 2</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+		</table>
+		<form action="thank-you.html">
+			<table id="scores-table" style="width:300px;text-align:center;">
+				<tr>
+					<th>Hole</th>
+					<!--<th>Name</th>-->
+					<th>Yards</th>
+					<th>Par</th>
+					<th>P1 Score</th>
+					<th>P2 Score</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<!--<td>The Gap</td>-->
+					<td>310</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="player-scores" /></td>
+					<td><input type="text" class="score-text" name="player-scores" /></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<!--<td>Cotton's May</td>-->
+					<td>298</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="player-scores" /></td>
+					<td><input type="text" class="score-text" name="player-scores" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<!--<td>Burn Even</td>-->
+					<td>356</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<!--<td>Canny Noo</td>-->
+					<td>141</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<!--<td>The Crags</td>-->
+					<td>332</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<!--<td>Moorefoot</td>-->
+					<td>352</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<!--<td>Millstones</td>-->
+					<td>187</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<!--<td>Tower Hill</td>-->
+					<td>498</td>
+					<td class="par">5</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<!--<td>[Name here]</td>-->
+					<td>447</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+			</table>
+			<table style="margin-top:25px;width:300px;text-align:center;">
+				<tr><td>Please avoid slow play at all times</td></tr>
+			</table>
+			<table id="second-scores-table" style="width:300px;text-align:center;">
+				<tr style="color:#fff;height:0!important;">
+					<th>Hole</th>
+					<!--<th>Name</th>-->
+					<th>Yards</th>
+					<th>Par</th>
+					<th>P1 Score</th>
+					<th>P2 Score</th>
+				</tr>
+				<tr>
+					<td>10</td>
+					<!--<td>The Gap</td>-->
+					<td>280</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>					
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<!--<td>Cotton's May</td>-->
+					<td>501</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>		
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<!--<td>Burn Even</td>-->
+					<td>458</td>
+					<td class="par">5</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<!--<td>Canny Noo</td>-->
+					<td>476</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<!--<td>The Crags</td>-->
+					<td>328</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<!--<td>Moorefoot</td>-->
+					<td>357</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<!--<td>Millstones</td>-->
+					<td>316</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<!--<td>Tower Hill</td>-->
+					<td>160</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<!--<td>[Name here]</td>-->
+					<td>414</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" /></td>
+					<td><input type="text" class="score-text" /></td>
+				</tr>
+			</table>
+			<input type="submit" value="submit" style="width: 300px;margin-top:10px;" />
+		</form>
+	</body>
+</html>

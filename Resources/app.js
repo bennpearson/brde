@@ -10,7 +10,7 @@ var tabGroup = Titanium.UI.createTabGroup();
 //
 var win1 = Titanium.UI.createWindow({    
 	url:'/windows/scorecard/scorecard.js',
-    title:'Scorecard',
+    title:'Scorecard - St Andrews',
     backgroundColor:'#fff'
 });
 var tab1 = Titanium.UI.createTab({  
@@ -18,16 +18,15 @@ var tab1 = Titanium.UI.createTab({
     title:'Scorecard',
     window:win1
 });
-
 var label1 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'Scorecard',
+	text:'Scorecard: Joe Bloggs',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto'
 });
 
-win1.add(label1);
+//win1.add(label1);
 
 //
 // create controls tab and root window
@@ -80,7 +79,8 @@ win3.add(label3);
 //
 // create controls tab and root window
 //
-var win4 = Titanium.UI.createWindow({  
+var win4 = Titanium.UI.createWindow({
+	url:'/windows/more/more.js',  
     title:'More',
     backgroundColor:'#fff'
 });
