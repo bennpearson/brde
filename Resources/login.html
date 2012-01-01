@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.8.6.custom.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/jquery-ui-1.8.6.custom.css" />
+
+		<script type="text/JavaScript">
+			function login(){
+				var email = document.forms[0]["email"].value;
+				var password = document.forms[0]["password"].value;
+				
+				/*var first_name = document.forms[0]["first_name"].value;
+				var last_name = document.forms[0]["last_name"].value;
+				var nickname = document.forms[0]["nickname"].value;
+				var email = document.forms[0]["email"].value;
+				var gender = document.forms[0]["gender"].value;
+				var handicap = document.forms[0]["handicap"].value;
+				var password = document.forms[0]["password"].value;*/
+			    /*Ti.App.fireEvent('scoresSubmitted', {
+			    	p1_hole_1: p1_hole_1,
+			    	p1_hole_2: p1_hole_2,
+			   	});
+			}*/
+				Ti.App.fireEvent('loginSubmitted', {
+			    	email: email,
+			    	password: password,
+			   	});
+			//alert('email = '+ email + ' password = '+ password);
+			}
+		</script>
+		<style>
+			input {text-align:center;}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table style="width:150px;text-align:center;border:1px solid red;">
+				<tr><td><label for="email">Email address:</label></td></tr>
+				<tr><td><input type="text" name="email" id="email" /></td></tr>
+				<tr><td><label for="password">Password:</label></td></tr>
+				<tr><td><input type="password" name="password" id="password" /></td></tr>
+				<tr><td><input type="submit" value="sign in" onclick="login();" /></td></tr>
+			</table>
+		</form>
+	</body>
+</html>

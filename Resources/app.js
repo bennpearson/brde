@@ -100,9 +100,16 @@ var label4 = Titanium.UI.createLabel({
 
 win4.add(label4);
 
-
-
-
+win5 = Titanium.UI.createWindow({
+	url:'/windows/scorecard/register.js', 
+    title:'Register',
+    backgroundColor:'#fff' 	
+});
+var tab5 = Titanium.UI.createTab({
+    icon:'KS_nav_ui.png',
+    title:'Register',
+    window:win5	
+});
 
 //
 //  add tabs
@@ -110,8 +117,15 @@ win4.add(label4);
 tabGroup.addTab(tab1);  
 tabGroup.addTab(tab2); 
 tabGroup.addTab(tab3); 
-tabGroup.addTab(tab4);  
+tabGroup.addTab(tab5);  
+tabGroup.addTab(tab4);
 
 
 // open tab group
-tabGroup.open();
+// open tab group
+tabGroup.open({
+        modal: true, 
+        modalTransitionStyle: Ti.UI.iPhone.MODAL_TRANSITION_STYLE_FLIP_HORIZONTAL,
+        modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_PAGESHEET,
+        navBarHidden : true
+});
