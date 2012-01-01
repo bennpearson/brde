@@ -100,7 +100,7 @@ var label4 = Titanium.UI.createLabel({
 
 win4.add(label4);
 
-win5 = Titanium.UI.createWindow({
+/*win5 = Titanium.UI.createWindow({
 	url:'/windows/scorecard/register.js', 
     title:'Register',
     backgroundColor:'#fff' 	
@@ -109,7 +109,7 @@ var tab5 = Titanium.UI.createTab({
     icon:'KS_nav_ui.png',
     title:'Register',
     window:win5	
-});
+});*/
 
 //
 //  add tabs
@@ -117,7 +117,7 @@ var tab5 = Titanium.UI.createTab({
 tabGroup.addTab(tab1);  
 tabGroup.addTab(tab2); 
 tabGroup.addTab(tab3); 
-tabGroup.addTab(tab5);  
+//tabGroup.addTab(tab5);  
 tabGroup.addTab(tab4);
 
 
