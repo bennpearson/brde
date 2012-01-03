@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script type="text/JavaScript">
+			function submitForm(){
+				var first_name = document.forms[0]["first_name"].value;
+				var last_name = document.forms[0]["last_name"].value;
+				var nickname = document.forms[0]["nickname"].value;
+				var email = document.forms[0]["email"].value;
+				var gender = document.forms[0]["gender"].value;
+				var handicap = document.forms[0]["handicap"].value;
+				var password = document.forms[0]["password"].value;
+			    Ti.App.fireEvent('formSubmitted', {
+			    	first_name: first_name,
+			    	last_name: last_name,
+			    	nickname: nickname,
+			    	email: email,
+			    	gender: gender,
+			    	password: password,
+			    	handicap: handicap
+			   	});
+			}
+		</script>
+	</head>
+	<body>
+		<form style="width:130px;">
+			<input type="text" name="first_name" value="First Name" onfocus="if(value == 'First Name'){value = ''}" />
+			<input type="text" name="last_name" value="Last Name" onfocus="if(value == 'Last Name'){value = ''}" />
+			<input type="text" name="nickname" value="Nickname" onfocus="if(value == 'Nickname'){value = ''}" />
+			<input type="text" name="email" value="Email address" onfocus="if(value == 'Email address'){value = ''}" />
+			<label for="password">Password:</label>
+			<input type="password" name="password" />
+			<input type="text" name="gender" value="Gender" onfocus="if(value == 'Gender'){value = ''}" />
+			<input type="text" name="handicap" value="Handicap" onfocus="if(value == 'Handicap'){value = ''}" /><br/>
+			<input type="button" title="Submit" value="Submit" onclick="submitForm();" style="float:right;" />
+		</form>
+	</body>
+</html>

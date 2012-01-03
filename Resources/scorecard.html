@@ -1,0 +1,346 @@
+<html>
+	<head>
+		<script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui-1.8.6.custom.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/jquery-ui-1.8.6.custom.css" />
+
+		<script type="text/JavaScript">
+			function submitScores(){
+				var p1_hole_1 = document.forms[0]["p1_hole_1"].value;
+				var p1_hole_2 = document.forms[0]["p1_hole_2"].value;
+				var p1_hole_3 = document.forms[0]["p1_hole_3"].value;
+				var p1_hole_4 = document.forms[0]["p1_hole_4"].value;
+				var p1_hole_5 = document.forms[0]["p1_hole_5"].value;
+				var p1_hole_6 = document.forms[0]["p1_hole_6"].value;
+				var p1_hole_7 = document.forms[0]["p1_hole_7"].value;
+				var p1_hole_8 = document.forms[0]["p1_hole_8"].value;
+				var p1_hole_9 = document.forms[0]["p1_hole_9"].value;
+				var p1_hole_10 = document.forms[0]["p1_hole_10"].value;
+				var p1_hole_11 = document.forms[0]["p1_hole_11"].value;
+				var p1_hole_12 = document.forms[0]["p1_hole_12"].value;
+				var p1_hole_13 = document.forms[0]["p1_hole_13"].value;
+				var p1_hole_14 = document.forms[0]["p1_hole_14"].value;
+				var p1_hole_15 = document.forms[0]["p1_hole_15"].value;
+				var p1_hole_16 = document.forms[0]["p1_hole_16"].value;
+				var p1_hole_17 = document.forms[0]["p1_hole_17"].value;
+				var p1_hole_18 = document.forms[0]["p1_hole_18"].value;
+
+				var p2_hole_1 = document.forms[0]["p2_hole_1"].value;
+				var p2_hole_2 = document.forms[0]["p2_hole_2"].value;
+				var p2_hole_3 = document.forms[0]["p2_hole_3"].value;
+				var p2_hole_4 = document.forms[0]["p2_hole_4"].value;
+				var p2_hole_5 = document.forms[0]["p2_hole_5"].value;
+				var p2_hole_6 = document.forms[0]["p2_hole_6"].value;
+				var p2_hole_7 = document.forms[0]["p2_hole_7"].value;
+				var p2_hole_8 = document.forms[0]["p2_hole_8"].value;
+				var p2_hole_9 = document.forms[0]["p2_hole_9"].value;
+				var p2_hole_10 = document.forms[0]["p2_hole_10"].value;
+				var p2_hole_11 = document.forms[0]["p2_hole_11"].value;
+				var p2_hole_12 = document.forms[0]["p2_hole_12"].value;
+				var p2_hole_13 = document.forms[0]["p2_hole_13"].value;
+				var p2_hole_14 = document.forms[0]["p2_hole_14"].value;
+				var p2_hole_15 = document.forms[0]["p2_hole_15"].value;
+				var p2_hole_16 = document.forms[0]["p2_hole_16"].value;
+				var p2_hole_17 = document.forms[0]["p2_hole_17"].value;
+				var p2_hole_18 = document.forms[0]["p2_hole_18"].value;
+				
+				/*var first_name = document.forms[0]["first_name"].value;
+				var last_name = document.forms[0]["last_name"].value;
+				var nickname = document.forms[0]["nickname"].value;
+				var email = document.forms[0]["email"].value;
+				var gender = document.forms[0]["gender"].value;
+				var handicap = document.forms[0]["handicap"].value;
+				var password = document.forms[0]["password"].value;*/
+			    Ti.App.fireEvent('scoresSubmitted', {
+			    	p1_hole_1: p1_hole_1,
+			    	p1_hole_2: p1_hole_2,
+			    	p1_hole_3: p1_hole_3,
+			    	p1_hole_4: p1_hole_4,
+			    	p1_hole_5: p1_hole_5,
+			    	p1_hole_6: p1_hole_6,
+			    	p1_hole_7: p1_hole_7,
+			    	p1_hole_8: p1_hole_8,
+			    	p1_hole_9: p1_hole_9,
+			    	p1_hole_10: p1_hole_10,
+			    	p1_hole_11: p1_hole_11,
+			    	p1_hole_12: p1_hole_12,
+			    	p1_hole_13: p1_hole_13,
+			    	p1_hole_14: p1_hole_14,
+			    	p1_hole_15: p1_hole_15,
+			    	p1_hole_16: p1_hole_16,
+			    	p1_hole_17: p1_hole_17,
+			    	p1_hole_18: p1_hole_18,
+			    	
+					p2_hole_1: p2_hole_1,
+			    	p2_hole_2: p2_hole_2,
+			    	p2_hole_3: p2_hole_3,
+			    	p2_hole_4: p2_hole_4,
+			    	p2_hole_5: p2_hole_5,
+			    	p2_hole_6: p2_hole_6,
+			    	p2_hole_7: p2_hole_7,
+			    	p2_hole_8: p2_hole_8,
+			    	p2_hole_9: p2_hole_9,
+			    	p2_hole_10: p2_hole_10,
+			    	p2_hole_11: p2_hole_11,
+			    	p2_hole_12: p2_hole_12,
+			    	p2_hole_13: p2_hole_13,
+			    	p2_hole_14: p2_hole_14,
+			    	p2_hole_15: p2_hole_15,
+			    	p2_hole_16: p2_hole_16,
+			    	p2_hole_17: p2_hole_17,
+			    	p2_hole_18: p2_hole_18
+
+			    	/*first_name: first_name,
+			    	last_name: last_name,
+			    	nickname: nickname,
+			    	email: email,
+			    	gender: gender,
+			    	password: password,
+			    	handicap: handicap*/
+			   	});
+			}
+		</script>
+		
+		<script>
+			function getDateAndTime() {
+				//store the current date in the date field
+				var currentTime = new Date();
+				var month = currentTime.getMonth() + 1;
+				var day = currentTime.getDate();
+				var year = currentTime.getFullYear();
+				document.getElementById('date').value = day + "/" + month + "/" + year;
+				
+				
+				//store the current time into the time field
+				var hours = currentTime.getHours()
+				var minutes = currentTime.getMinutes()
+				if (minutes < 10){
+					minutes = "0" + minutes;
+				}
+				document.getElementById('time').value = hours + ":" + minutes + " ";
+			}
+		</script>
+		<script>
+		/*$(function() {
+		    $('#date').datepicker({
+			dateFormat: 'dd/mm/yy'});
+		});
+		function validate() {
+			alert('oi!');
+
+			var x=document.getElementsByName('player-scores').value;
+			var regExp = /[1-9]{1}/i;
+			
+				if(x == '') {
+					alert('double no!');
+				}
+				else if (!x.match(regExp)) {
+				    //document.getElementById('player-scores').style.background='#ffeac8';
+				    alert('no!');
+				    //document.getElementById('CSCerror').innerHTML = "You must enter<br/> a CSC number";
+				    formok=false;
+				}
+				else {
+					alert('yep!');
+					formok=true;
+					//redirect here... 
+				}
+		}*/
+		</script>
+		</script>
+		<style>
+			body {font-family: Georgia, "Times New Roman", Times, serif;}
+			table {width:300px;border:1px solid #ccc;}
+			.score-text {border:none;width:75px;text-align:center;}
+			.hint-text {color:#666;}
+			#date {width:105px;text-align:center;}
+			#time {width:104px;text-align:center;}
+			#scores-table tr td, #second-scores-table tr td, #third-table tr td {border: 1px solid #ccc;}
+			#second-scores-table tr td:first-child {width: 38px;}
+			#second-scores-table tr td:nth-child(2) {width: 47px;}
+			#second-scores-table tr td:nth-child(3) {width: 28px;}
+			#third-table tr td:first-child {width: 125px;}
+			.par {color: #f00;}
+		</style>
+	</head>
+	<body onLoad="getDateAndTime();">
+		<table>
+			<tr>
+				<td>Date </td><td><input type="text" value="" id="date" class="hint-text" /></td><td>Time </td><td><input type="text" class="hint-text" id="time" onFocus="if(value == '') {value = 'Time'}" onBlur="if(value == '') {value='Name'}" /></td>
+			</tr>
+		</table>
+		<table style="width:300px;">
+			<tr><td class="players">Player 1</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+			<tr><td class="players">Player 2</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+		</table>
+		<form>
+			<table id="scores-table" style="width:300px;text-align:center;">
+				<tr>
+					<th>Hole</th>
+					<!--<th>Name</th>-->
+					<th>Yards</th>
+					<th>Par</th>
+					<th>P1 Score</th>
+					<th>P2 Score</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<!--<td>The Gap</td>-->
+					<td>310</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_1" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_1" /></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<!--<td>Cotton's May</td>-->
+					<td>298</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_2" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_2" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<!--<td>Burn Even</td>-->
+					<td>356</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_3" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_3" /></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<!--<td>Canny Noo</td>-->
+					<td>141</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" name="p1_hole_4" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_4" /></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<!--<td>The Crags</td>-->
+					<td>332</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_5" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_5" /></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<!--<td>Moorefoot</td>-->
+					<td>352</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_6" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_6" /></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<!--<td>Millstones</td>-->
+					<td>187</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" name="p1_hole_7" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_7" /></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<!--<td>Tower Hill</td>-->
+					<td>498</td>
+					<td class="par">5</td>
+					<td><input type="text" class="score-text" name="p1_hole_8" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_8" /></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<!--<td>[Name here]</td>-->
+					<td>447</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_9" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_9" /></td>
+				</tr>
+			</table>
+			<table style="margin-top:25px;width:300px;text-align:center;">
+				<tr><td>Please avoid slow play at all times</td></tr>
+			</table>
+			<table id="second-scores-table" style="width:300px;text-align:center;">
+				<tr>
+					<td>10</td>
+					<!--<td>The Gap</td>-->
+					<td>280</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_10" /></td>					
+					<td><input type="text" class="score-text" name="p2_hole_10" /></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<!--<td>Cotton's May</td>-->
+					<td>501</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_11" /></td>		
+					<td><input type="text" class="score-text" name="p2_hole_11" /></td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<!--<td>Burn Even</td>-->
+					<td>458</td>
+					<td class="par">5</td>
+					<td><input type="text" class="score-text" name="p1_hole_12" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_12" /></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<!--<td>Canny Noo</td>-->
+					<td>476</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_13" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_13" /></td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<!--<td>The Crags</td>-->
+					<td>328</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_14" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_14" /></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<!--<td>Moorefoot</td>-->
+					<td>357</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_15" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_15" /></td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<!--<td>Millstones</td>-->
+					<td>316</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_16" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_16" /></td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<!--<td>Tower Hill</td>-->
+					<td>160</td>
+					<td class="par">3</td>
+					<td><input type="text" class="score-text" name="p1_hole_17" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_17" /></td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<!--<td>[Name here]</td>-->
+					<td>414</td>
+					<td class="par">4</td>
+					<td><input type="text" class="score-text" name="p1_hole_18" /></td>
+					<td><input type="text" class="score-text" name="p2_hole_18" /></td>
+				</tr>
+			</table>
+			<table id="third-table" style="width:300px;text-align:center;">
+				<tr>
+					<td>Final Score</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<input type="submit" value="submit" style="width: 300px;margin-top:10px;" onclick="submitScores();" />
+		</form>
+	</body>
+</html>
