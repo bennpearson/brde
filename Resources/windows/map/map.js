@@ -4,14 +4,28 @@ win.title = '';
 
 win.hideNavBar();
 
+/* This shows how the app could use the remote images on the server to keep up to date with changes on the course and flag positions.
+var view1 = Titanium.UI.createImageView({
+	image:'http://brde.smotyn.com/assets/img/courses/parc_golf_club/1.jpg',
+	defaultImage:'holes/hole1.png',
+	width:320,
+	height:370,
+	bottom:-5,
+	//borderWidth: 5,
+	//borderColor:'#000',
+});
+*/
+
+	
 var view1 = Ti.UI.createView({
 	width:320,
-	height:366,
-	bottom:0,
-	borderWidth: 5,
-	borderColor:'#000',
+	height:370,
+	bottom:-5,
+	//borderWidth: 5,
+	//borderColor:'#000',
 	backgroundImage:'holes/hole1.png',
 });
+
 var l1 = Ti.UI.createLabel({
 	text:'',
 	color:'#fff',
@@ -23,14 +37,14 @@ var l1 = Ti.UI.createLabel({
 view1.add(l1);
 
 var view2 = Ti.UI.createView({
-	width:216,
+	width:320,
 	height:370,
-	bottom:0,
-	backgroundImage:'holes/hole2.jpeg',
+	bottom:-5,
+	backgroundImage:'holes/hole2.png',
 	zIndex:1
 });
 var l2 = Ti.UI.createLabel({
-	text:'Hole 2',
+	text:'',
 	color:'#fff',
 	width:'auto',
 	height:'auto',
@@ -39,13 +53,13 @@ var l2 = Ti.UI.createLabel({
 view2.add(l2);
 
 var view3 = Ti.UI.createView({
-	width:216,
+	width:320,
 	height:370,
-	bottom:0,
-	backgroundImage:'holes/hole3.jpeg',
+	bottom:-5,
+	backgroundImage:'holes/hole3.png',
 });
 var l3 = Ti.UI.createLabel({
-	text:'Hole 3',
+	text:'',
 	color:'#fff',
 	width:'auto',
 	height:'auto',
@@ -53,33 +67,18 @@ var l3 = Ti.UI.createLabel({
 });
 view3.add(l3);
 
-var view4 = Ti.UI.createView({
-	width:216,
-	height:370,
-	bottom:0,
-	backgroundImage:'holes/hole4.jpeg',
-});
-var l4 = Ti.UI.createLabel({
-	text:'Hole 4',
-	color:'#fff',
-	width:'auto',
-	height:'auto',
-	top:0
-});
-view4.add(l4);
-
 
 var scrollView = Titanium.UI.createScrollableView({
-	views:[view1,view2,view3,view4],
+	views:[view1,view2,view3,],
 	showPagingControl:false,
 	pagingControlHeight:30,
 	maxZoomScale:2.0,
-	currentPage:1
+	currentPage:0
 });
 
 win.add(scrollView);
 
-var i=1;
+var i=0;
 var activeView = view1;
 
 scrollView.addEventListener('scroll', function(e)
@@ -151,11 +150,11 @@ toolbar.add(left);
 var t = Titanium.UI.create2DMatrix();
 t= t.rotate(90);
 var menuWin = Titanium.UI.createWindow({
-	backgroundImage:'images/menubox.png',
-	height:300,
+	backgroundImage:'holes/hole1_overlay.png',
+	height:370,
 	width:300,
-	top:32,
-	right:10,
+	bottom:45,
+	right:0,
 	anchorPoint:{x:1,y:0},
 	transform:t,
 	opacity:0
@@ -164,7 +163,7 @@ var menuWin = Titanium.UI.createWindow({
 var t2 = Titanium.UI.create2DMatrix();
 
 var navButton = Titanium.UI.createButton({
-	title:'Cheat!',
+	title:'Pro tips!',
 	bottom: 0,
 	left:0,
 	height:30,
