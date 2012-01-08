@@ -160,34 +160,34 @@ var menuWin = Titanium.UI.createWindow({
 	opacity:0
 });
 
-var t2 = Titanium.UI.create2DMatrix();
+//var t2 = Titanium.UI.create2DMatrix();
 
-var navButton = Titanium.UI.createButton({
-	title:'Pro tips!',
-	bottom: 0,
-	left:0,
-	height:30,
-	width: 70,
-});
-var visible = false;
-navButton.addEventListener('click', function()
-{
-	if (!visible)
-	{
-		menuWin.open();
-		menuWin.animate({transform:t2,opacity:1,duration:800});
-		visible=true;
-	}
-	else
-	{
-		var t = Titanium.UI.create2DMatrix();
-		t= t.rotate(-90);
-		menuWin.animate({transform:t,opacity:0,duration:800}, function()
-		{
-			menuWin.close();
-		});
-		visible=false;
-	}
-});
-
-win.add(navButton);
+// var navButton = Titanium.UI.createButton({
+	// title:'Pro tips!',
+	// bottom: 0,
+	// left:0,
+	// height:30,
+	// width: 70,
+// });
+// var visible = false;
+// navButton.addEventListener('click', function()
+// {
+	// if (!visible)
+	// {
+		// menuWin.open();
+		// menuWin.animate({transform:t2,opacity:1,duration:800});
+		// visible=true;
+	// }
+	// else
+	// {
+		// var t = Titanium.UI.create2DMatrix();
+		// t= t.rotate(-90);
+		// menuWin.animate({transform:t,opacity:0,duration:800}, function()
+		// {
+			// menuWin.close();
+		// });
+		// visible=false;
+	// }
+// });
+// 
+// win.add(navButton);

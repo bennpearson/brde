@@ -4,7 +4,6 @@ win.hideNavBar();
 
 var data = [
 { title: 'Select Course' },
-{ title: 'Language' },
 { title: 'Settings' },
 { title: 'Help' }
 ];

@@ -10,5 +10,5 @@ var toolbar = Titanium.UI.createView({
 	top:0,
 	zIndex:5
 });
-//here I am
+
 win.add(toolbar);

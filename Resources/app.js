@@ -11,10 +11,10 @@ var tabGroup = Titanium.UI.createTabGroup();
 var win1 = Titanium.UI.createWindow({    
 	url:'/windows/scorecard/scorecard.js',
     title:'Scorecard',
-    backgroundColor:'#fff'
+    backgroundColor:'#000'
 });
 var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
+    icon:'scoreCard.png',
     title:'Scorecard',
     window:win1
 });
@@ -34,10 +34,10 @@ var label1 = Titanium.UI.createLabel({
 var win2 = Titanium.UI.createWindow({    
 	url:'/windows/map/map.js',
     title:'Map',
-    backgroundColor:'#fff'
+    backgroundColor:'#000'
 });
 var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
+    icon:'map.png',
     title:'Map',
     window:win2
 });
@@ -56,12 +56,10 @@ var label2 = Titanium.UI.createLabel({
 // create controls tab and root window
 //
 var win3 = Titanium.UI.createWindow({    
-	url:'/windows/leaderboard/leaderboard.js',
-    title:'Leaderboard',
-    backgroundColor:'#000'
+	url:'/windows/leaderboard/leaderboard2.js',
 });
 var tab3 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
+    icon:'leaderboard.png',
     title:'Leaderboard',
     window:win3
 });
@@ -85,7 +83,7 @@ var win4 = Titanium.UI.createWindow({
     backgroundColor:'#fff'
 });
 var tab4 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
+    icon:'more.png',
     title:'More',
     window:win4
 });
