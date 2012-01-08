@@ -10,7 +10,7 @@ var tabGroup = Titanium.UI.createTabGroup();
 //
 var win1 = Titanium.UI.createWindow({    
 	url:'/windows/scorecard/scorecard.js',
-    title:'Scorecard - St Andrews',
+    title:'Scorecard',
     backgroundColor:'#fff'
 });
 var tab1 = Titanium.UI.createTab({  
@@ -50,7 +50,7 @@ var label2 = Titanium.UI.createLabel({
 	width:'auto'
 });
 
-win2.add(label2);
+//win2.add(label2);
 
 //
 // create controls tab and root window
@@ -58,7 +58,7 @@ win2.add(label2);
 var win3 = Titanium.UI.createWindow({    
 	url:'/windows/leaderboard/leaderboard.js',
     title:'Leaderboard',
-    backgroundColor:'#fff'
+    backgroundColor:'#000'
 });
 var tab3 = Titanium.UI.createTab({  
     icon:'KS_nav_ui.png',

@@ -1,4 +1,17 @@
 var win = Titanium.UI.currentWindow;
+
+	win.hideNavBar();
+
+	/*var toolbar = Titanium.UI.createView({
+		backgroundImage:'../../img/logo.jpg',
+		height: 44,
+		left: 0,
+		right: 0,
+		top:0,
+		zIndex:5
+	});
+	
+	win.add(toolbar);*/
 	
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,'scorecard.html');
 	var html = file.read().text; 
@@ -8,10 +21,9 @@ var win = Titanium.UI.currentWindow;
 	
 	var webview = Ti.UI.createWebView({
 		html: html,
-	    top: 10,
+	    top: 0,
 	    left: 0,
-	    width: 310,
-	    height: 300
+	    width: 320
 	});
 	//setup information...
 	win.add(webview);
@@ -28,7 +40,7 @@ var win = Titanium.UI.currentWindow;
 	
 	
 	var loginSubmittedFunction = function (e) {
-		var message = "emailTest: " + e.email + "\n\nPasswordTest: " + e.password;
+		var message = "Email: " + e.email + "\n\nPassword: " + e.password;
 		alert(message);
 		
 		var client = Ti.Network.createHTTPClient({
@@ -157,7 +169,7 @@ var win = Titanium.UI.currentWindow;
 			+ "\n\nhole16: " + e.p2_hole_16
 			+ "\n\nhole17: " + e.p2_hole_17
 			+ "\n\nhole18: " + e.p2_hole_18
-		}//closes the initial else loop (for the, if logged in statement...)
+		}//closes the initial else loop (for the if logged in statement...)
 
 		//alert(message);
 		
@@ -170,8 +182,6 @@ var win = Titanium.UI.currentWindow;
 		Ti.App.removeEventListener('formSubmitted', scoresSubmittedFunction);
 		//removes the listener...
 	});
-	
-	
 	
 	//login event listeners...
 	Ti.App.addEventListener('loginSubmitted', loginSubmittedFunction);

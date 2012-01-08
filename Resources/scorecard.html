@@ -149,198 +149,214 @@
 		</script>
 		</script>
 		<style>
-			body {font-family: Georgia, "Times New Roman", Times, serif;}
+			* {margin:0;padding:0;}
+			body {font-family: Georgia, "Times New Roman", Times, serif;color:#fff;}
 			table {width:300px;border:1px solid #ccc;}
-			.score-text {border:none;width:75px;text-align:center;}
-			.hint-text {color:#666;}
+			.score-text {border:none;width:75px;text-align:center;background-color:#939a7e;color:#fff;}
+			.hint-text {color:#333;padding-left:5px;}
 			#date {width:105px;text-align:center;}
 			#time {width:104px;text-align:center;}
 			#scores-table tr td, #second-scores-table tr td, #third-table tr td {border: 1px solid #ccc;}
-			#second-scores-table tr td:first-child {width: 38px;}
-			#second-scores-table tr td:nth-child(2) {width: 47px;}
-			#second-scores-table tr td:nth-child(3) {width: 28px;}
+			#second-scores-table tr td:first-child {width: 37px;}
+			#second-scores-table tr td:nth-child(2) {width: 48px;}
+			#second-scores-table tr td:nth-child(3) {width: 32px;}
 			#third-table tr td:first-child {width: 125px;}
 			.par {color: #f00;}
+			#wrapper {width:320px;}
+			#advert {margin-top:10px;}
+			#table-wrapper {background-color:#000;color:#fff;margin:auto;padding-left:10px;background-image:url(img/back.jpg);}
+			table {background-color: #505535;color:#fff;width:300px;text-align:center;}
+			table td {background-color: #939a7e;}
+			.players, #date-time-row td, #no-slow-play, #player-cells {background-color: #505535;}
+			#submit-btn {background-color: #505535;color:#fff;border:1px solid #939a7e;;border-radius:3px 3px;margin-bottom:10px;width: 300px;margin-top:10px;}
+			#player1-input, #player2-input {width:229px;}
+			#no-slow-play-tbl {margin-top:25px;}
 		</style>
 	</head>
 	<body onLoad="getDateAndTime();">
-		<table>
-			<tr>
-				<td>Date </td><td><input type="text" value="" id="date" class="hint-text" /></td><td>Time </td><td><input type="text" class="hint-text" id="time" onFocus="if(value == '') {value = 'Time'}" onBlur="if(value == '') {value='Name'}" /></td>
-			</tr>
-		</table>
-		<table style="width:300px;">
-			<tr><td class="players">Player 1</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
-			<tr><td class="players">Player 2</td><td><input type="text" style="width:229px;" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
-		</table>
-		<form>
-			<table id="scores-table" style="width:300px;text-align:center;">
-				<tr>
-					<th>Hole</th>
-					<!--<th>Name</th>-->
-					<th>Yards</th>
-					<th>Par</th>
-					<th>P1 Score</th>
-					<th>P2 Score</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<!--<td>The Gap</td>-->
-					<td>310</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_1" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_1" /></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<!--<td>Cotton's May</td>-->
-					<td>298</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_2" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_2" /></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<!--<td>Burn Even</td>-->
-					<td>356</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_3" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_3" /></td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<!--<td>Canny Noo</td>-->
-					<td>141</td>
-					<td class="par">3</td>
-					<td><input type="text" class="score-text" name="p1_hole_4" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_4" /></td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<!--<td>The Crags</td>-->
-					<td>332</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_5" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_5" /></td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<!--<td>Moorefoot</td>-->
-					<td>352</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_6" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_6" /></td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<!--<td>Millstones</td>-->
-					<td>187</td>
-					<td class="par">3</td>
-					<td><input type="text" class="score-text" name="p1_hole_7" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_7" /></td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<!--<td>Tower Hill</td>-->
-					<td>498</td>
-					<td class="par">5</td>
-					<td><input type="text" class="score-text" name="p1_hole_8" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_8" /></td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<!--<td>[Name here]</td>-->
-					<td>447</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_9" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_9" /></td>
-				</tr>
-			</table>
-			<table style="margin-top:25px;width:300px;text-align:center;">
-				<tr><td>Please avoid slow play at all times</td></tr>
-			</table>
-			<table id="second-scores-table" style="width:300px;text-align:center;">
-				<tr>
-					<td>10</td>
-					<!--<td>The Gap</td>-->
-					<td>280</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_10" /></td>					
-					<td><input type="text" class="score-text" name="p2_hole_10" /></td>
-				</tr>
-				<tr>
-					<td>11</td>
-					<!--<td>Cotton's May</td>-->
-					<td>501</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_11" /></td>		
-					<td><input type="text" class="score-text" name="p2_hole_11" /></td>
-				</tr>
-				<tr>
-					<td>12</td>
-					<!--<td>Burn Even</td>-->
-					<td>458</td>
-					<td class="par">5</td>
-					<td><input type="text" class="score-text" name="p1_hole_12" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_12" /></td>
-				</tr>
-				<tr>
-					<td>13</td>
-					<!--<td>Canny Noo</td>-->
-					<td>476</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_13" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_13" /></td>
-				</tr>
-				<tr>
-					<td>14</td>
-					<!--<td>The Crags</td>-->
-					<td>328</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_14" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_14" /></td>
-				</tr>
-				<tr>
-					<td>15</td>
-					<!--<td>Moorefoot</td>-->
-					<td>357</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_15" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_15" /></td>
-				</tr>
-				<tr>
-					<td>16</td>
-					<!--<td>Millstones</td>-->
-					<td>316</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_16" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_16" /></td>
-				</tr>
-				<tr>
-					<td>17</td>
-					<!--<td>Tower Hill</td>-->
-					<td>160</td>
-					<td class="par">3</td>
-					<td><input type="text" class="score-text" name="p1_hole_17" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_17" /></td>
-				</tr>
-				<tr>
-					<td>18</td>
-					<!--<td>[Name here]</td>-->
-					<td>414</td>
-					<td class="par">4</td>
-					<td><input type="text" class="score-text" name="p1_hole_18" /></td>
-					<td><input type="text" class="score-text" name="p2_hole_18" /></td>
-				</tr>
-			</table>
-			<table id="third-table" style="width:300px;text-align:center;">
-				<tr>
-					<td>Final Score</td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-			<input type="submit" value="submit" style="width: 300px;margin-top:10px;" onclick="submitScores();" />
-		</form>
+		<section id="wrapper">
+			<img src="img/logo.jpg" alt="" id="logo" />
+			<section id="table-wrapper">
+				<img src="img/advert.jpg" alt="" id="advert" />
+				<table>
+					<tr id="date-time-row">
+						<td>Date </td><td><input type="text" value="" id="date" class="hint-text" /></td><td>Time </td><td><input type="text" class="hint-text" id="time" onFocus="if(value == '') {value = 'Time'}" onBlur="if(value == '') {value='Name'}" /></td>
+					</tr>
+				</table>
+				<table>
+					<tr><td class="players">Player 1</td><td id="player-cells"><input type="text" id="player1-input" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+					<tr><td class="players">Player 2</td><td id="player-cells"><input type="text" id="player2-input" value="Name" class="hint-text" onFocus="if(value == 'Name') {value = ''}" onBlur="if(value == '') {value='Name'}" /></td></tr>
+				</table>
+				<form>
+					<table id="scores-table">
+						<tr>
+							<th>Hole</th>
+							<!--<th>Name</th>-->
+							<th>Yards</th>
+							<th>Par</th>
+							<th>P1 Score</th>
+							<th>P2 Score</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<!--<td>The Gap</td>-->
+							<td>310</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_1" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_1" /></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<!--<td>Cotton's May</td>-->
+							<td>298</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_2" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_2" /></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<!--<td>Burn Even</td>-->
+							<td>356</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_3" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_3" /></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<!--<td>Canny Noo</td>-->
+							<td>141</td>
+							<td class="par">3</td>
+							<td><input type="text" class="score-text" name="p1_hole_4" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_4" /></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<!--<td>The Crags</td>-->
+							<td>332</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_5" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_5" /></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<!--<td>Moorefoot</td>-->
+							<td>352</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_6" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_6" /></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<!--<td>Millstones</td>-->
+							<td>187</td>
+							<td class="par">3</td>
+							<td><input type="text" class="score-text" name="p1_hole_7" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_7" /></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<!--<td>Tower Hill</td>-->
+							<td>498</td>
+							<td class="par">5</td>
+							<td><input type="text" class="score-text" name="p1_hole_8" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_8" /></td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<!--<td>[Name here]</td>-->
+							<td>447</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_9" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_9" /></td>
+						</tr>
+					</table>
+					<table id="no-slow-play-tbl">
+						<tr><td id="no-slow-play">Please avoid slow play at all times</td></tr>
+					</table>
+					<table id="second-scores-table">
+						<tr>
+							<td>10</td>
+							<!--<td>The Gap</td>-->
+							<td>280</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_10" /></td>					
+							<td><input type="text" class="score-text" name="p2_hole_10" /></td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<!--<td>Cotton's May</td>-->
+							<td>501</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_11" /></td>		
+							<td><input type="text" class="score-text" name="p2_hole_11" /></td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<!--<td>Burn Even</td>-->
+							<td>458</td>
+							<td class="par">5</td>
+							<td><input type="text" class="score-text" name="p1_hole_12" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_12" /></td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<!--<td>Canny Noo</td>-->
+							<td>476</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_13" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_13" /></td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<!--<td>The Crags</td>-->
+							<td>328</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_14" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_14" /></td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<!--<td>Moorefoot</td>-->
+							<td>357</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_15" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_15" /></td>
+						</tr>
+						<tr>
+							<td>16</td>
+							<!--<td>Millstones</td>-->
+							<td>316</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_16" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_16" /></td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<!--<td>Tower Hill</td>-->
+							<td>160</td>
+							<td class="par">3</td>
+							<td><input type="text" class="score-text" name="p1_hole_17" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_17" /></td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<!--<td>[Name here]</td>-->
+							<td>414</td>
+							<td class="par">4</td>
+							<td><input type="text" class="score-text" name="p1_hole_18" /></td>
+							<td><input type="text" class="score-text" name="p2_hole_18" /></td>
+						</tr>
+					</table>
+					<table id="third-table">
+						<tr>
+							<td>Final Score</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+					<input type="submit" value="submit" id="submit-btn" onClick="submitScores();" />
+				</form>
+			</section><!--end of #section-wrapper-->
+		</section><!--end of #wrapper-->
 	</body>
 </html>
